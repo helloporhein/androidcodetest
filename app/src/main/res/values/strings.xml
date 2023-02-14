@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">AcePlusCodeTest</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="events">Events</string>
+    <string name="no_internet">No Internet Connection!</string>
+    <string name="home">Home</string>
+    <string name="photos">Photos</string>
+
+    <string name="network_error">Network Error. Try Again?</string>
+    <string name="ok">Ok</string>
+    <string name="error">Error</string>
+    <string name="title_message">You must enter a title</string>
+    <string name="enter_title">You must enter a title</string>
+</resources>
