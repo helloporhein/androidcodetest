@@ -16,24 +16,30 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.example.acepluscodetest.databinding.ActivityWebBinding
+import com.example.acepluscodetest.view.activities.BaseActivity
 import com.example.acepluscodetest.view.activities.PhotosActivity
+import kotlinx.android.synthetic.main.toolbar_view_custom_layout.*
 
-class WebActivity : AppCompatActivity() {
+class WebActivity : BaseActivity() {
 
+    private val toolbar: Toolbar by lazy { toolbar_toolbar_view as Toolbar }
     var web: WebView? = null
     var progressBar: ProgressBar? = null
     var mEmptyStateView: TextView? = null
-    var toolbar: Toolbar? = null
+    //var toolbar: Toolbar? = null
     var url: String? = null
-    //private lateinit var binding: ActivityWebBinding
+    private lateinit var binding: ActivityWebBinding
+
+    override fun getToolbarInstance(): Toolbar? = toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_web)
-        progressBar = findViewById(R.id.loading_indicator)
-        mEmptyStateView = findViewById(R.id.empty_view)
+        binding = ActivityWebBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        progressBar = binding.loadingIndicator
+        mEmptyStateView = binding.emptyView
         progressBar!!.setVisibility(View.VISIBLE)
-        web = findViewById(R.id.webView)
+        web = binding.webView
         web?.setWebViewClient(Browser_home())
         // For Video
         //web?.setWebChromeClient(MyChrome())
@@ -65,6 +71,8 @@ class WebActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
     }
+
+
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
@@ -134,7 +142,7 @@ class WebActivity : AppCompatActivity() {
         }
 
         override fun onPageFinished(view: WebView, url: String) {
-            title = view.title
+            //title = view.title
             progressBar!!.visibility = View.GONE
             super.onPageFinished(view, url)
         }

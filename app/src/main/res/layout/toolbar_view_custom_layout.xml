@@ -15,24 +15,17 @@
     android:theme="@style/TopBarStyle"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-    <androidx.appcompat.widget.Toolbar
+    <com.google.android.material.appbar.MaterialToolbar
       android:id="@+id/toolbar_toolbar_view"
       android:layout_width="match_parent"
       android:layout_height="?attr/actionBarSize"
       android:elevation="3dp"
       android:gravity="center"
-      android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-      app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+        app:titleCentered="true"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
 
-    </androidx.appcompat.widget.Toolbar>
-
-    <com.google.android.material.tabs.TabLayout
-      android:id="@+id/tab_layout_toolbar_view"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center_horizontal"
-      android:visibility="gone"
-      app:tabMode="scrollable" />
+    </com.google.android.material.appbar.MaterialToolbar>
 
   </com.google.android.material.appbar.AppBarLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

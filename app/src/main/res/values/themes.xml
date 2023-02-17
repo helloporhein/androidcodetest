@@ -25,7 +25,6 @@
     <style name="TopBarStyle" parent="@style/Theme.MaterialComponents.Light.DarkActionBar">
 
         <item name="android:textAlignment">center</item>
-        <item name="android:gravity">center_horizontal</item>
         <item name="android:textColorPrimary">@color/black</item>
     </style>
 </resources>
